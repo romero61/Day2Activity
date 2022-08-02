@@ -1,0 +1,29 @@
+---
+title: "Section3"
+author: "Guillermo Romero"
+date: "2022-08-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+In your R Markdown document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk).
+
+f(x)=x^2 at x=3
+P(a)=2(3a+2)^4−5 at a=1.2
+g(t)=−4t(t^2+1)^3 at t=0
+
+```{r}
+f_x <- expression(x ^ 2 )
+P_a <- expression(2 *(3 * a + 2) ^ 4 - 5)
+g_t <- expression(-4 * t * (t ^ 2 + 1) ^ 3)
+
+df_dx <- D(f_x, "x")
+dP_da <- D(P_a, 'a')
+dg_dt <- D(g_t, "t")
+```
+
