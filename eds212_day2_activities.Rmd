@@ -27,3 +27,34 @@ dP_da <- D(P_a, 'a')
 dg_dt <- D(g_t, "t")
 ```
 
+Section 4: Make a penguin plot
+In a new code chunk, create a ggplot graph of penguin bill length versus bill depth (using the penguins dataset in the palmerpenguins package), with point color dependent on species. You should attach the tidyverse and palmerpenguins package in your .Rmd setup chunk. Update labels and add a title.
+
+```{r}
+ggplot(data = penguins, aes(x = bill_depth_mm, y = bill_length_mm)) + 
+         geom_point(aes(color = species)) +
+                      labs(x = "Bill Length (mm)",
+                           y = "Bill Depth (mm)",
+                           title = "Palmer Penguins")
+                    
+                    
+```
+
+
+
+In a new code chunk, make a jitterplot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title.
+Knit your .Rmd to check for reproducibility
+Stage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored & tracked.
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+         geom_jitter(aes(color = species)) +
+                      labs(x = "Species",
+                           y = "Flipper Length(mm)",
+                           title = "Palmer Penguins")
+```
+
+
+Go back to your R Markdown document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.
+
+Repeat two more times - make changes to your plot, knit, stage, commit & push. Check that your changes appear on GitHub.
