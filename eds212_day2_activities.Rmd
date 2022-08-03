@@ -48,10 +48,11 @@ Stage, commit, and push changes to the remote repo. Once you do, go to GitHub an
 
 ```{r}
 ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
-         geom_jitter(aes(color = species, size = flipper_length_mm)) +
+         geom_jitter(aes(color = species, alpha = flipper_length_mm)) +
                       labs(x = "Species",
                            y = "Flipper Length(mm)",
-                           title = "Palmer Penguins")
+                           title = "Palmer Penguins") +
+  facet_grid(~island)
 ```
 
 
